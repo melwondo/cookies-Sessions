@@ -1,8 +1,9 @@
 <?php
-session_destroy();
+session_start();
 setcookie('user', '', time() - 3600, '/');
 unset($_SESSION['user']);
-unset($_SESSION['PHPSESSID']);
+unset($_SESSION['cart']);
+session_destroy();
 header('location: login.php');
 exit;
 ?>
